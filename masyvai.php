@@ -105,29 +105,71 @@
 
 
 // $masyvas = [];
-foreach(range(1, 10) as $index1 => $_) {
-    foreach(range(1, 5) as $index2 => $_) {
-        $masyvas[$index1][$index2] = rand(5, 25);
-    }
-}
+// foreach(range(1, 10) as $index1 => $_) {
+//     foreach(range(1, 5) as $index2 => $_) {
+//         $masyvas[$index1][$index2] = rand(5, 25);
+//     }
+// }
 
-$counter = 0;
-foreach($masyvas as $mazas_masyvas) {
-    foreach($mazas_masyvas as $reiksmes) {
-        if(10 < $reiksmes) {
-            $counter++; 
-        }
-    }
-}
-_dc($masyvas);
-usort($masyvas, function($a, $b){
-    return $b[3] <=> $a[3];
-});
-_dc($masyvas);
+// $counter = 0;
+// foreach($masyvas as $mazas_masyvas) {
+//     foreach($mazas_masyvas as $reiksmes) {
+//         if(10 < $reiksmes) {
+//             $counter++; 
+//         }
+//     }
+// }
+// _dc($masyvas);
+// usort($masyvas, function($a, $b){
+//     return $b[3] <=> $a[3];
+// });
+// _dc($masyvas);
 
 // foreach($masyvas as $val) {
 
 // }
+
+$ABCZ = 'ABCZ';
+for ($i = 0; $i < 200; $i++) {
+    $randomABCD1[] = $ABCZ[rand(0,3)];
+    $randomABCD2[] = $ABCZ[rand(0,3)];
+    $randomABCD3[] = $ABCZ[rand(0,3)];
+}
+
+foreach($randomABCD1 as $key => $_) {
+    $bendrasMasyvas[] = $randomABCD1[$key].$randomABCD2[$key].$randomABCD3[$key];
+}
+
+
+_d($bendrasMasyvas);
+
+$unikalios = [];
+$po1karta = [];
+
+foreach($bendrasMasyvas as $val) {
+    if (!in_array($val, $unikalios)) {
+        $unikalios[] = $val;
+    }
+}
+
+foreach($bendrasMasyvas as $key => $val) {
+    unset($bendrasMasyvas[$key]);
+    if (!in_array($val, $bendrasMasyvas)) {
+        $po1karta[] = $val;
+    }
+    $bendrasMasyvas[$key] = $val;
+}
+
+
+_dc(count($unikalios));
+_dc(count($po1karta));
+
+
+
+
+
+
+
 
 
 
