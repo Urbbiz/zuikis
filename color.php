@@ -1,5 +1,15 @@
 <?php
-$color = isset($_GET['color'])?'red':'black';
+
+
+if (isset($_GET['color']) && $_GET['color'] == 1) {
+    $color = 'red'; 
+}
+else {
+    $color = 'black';
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +21,9 @@ $color = isset($_GET['color'])?'red':'black';
     <title>COLORADO</title>
 </head>
 <body style="background:<?= $color ?>;">
-<a href="?">Black</a>
-<a href="?color=1">Red</a>  
+
+<a href="http://localhost/zuikis/color.php">Black</a>
+<a href="http://localhost/zuikis/color.php?color=1">Red</a>
+
 </body>
 </html>
