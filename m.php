@@ -16,8 +16,13 @@ if (!empty($_POST)) {
 <a href="?kabinetas=nr52&valdininkas=Jonas">Buhalterija Jonas</a>
 <a href="?kabinetas=nr53&valdininkas=Petras">Finansitai Petras</a>
 <a href="?kabinetas=nr53&valdininkas=Ona">Finansitai Ona</a>
-<?php
 
+
+<a href="?">Black</a>
+<a href="?color=1">Red</a>
+
+
+<?php
 
 
 _d($_GET);
