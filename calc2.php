@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $_SESSION['Rezultatas'] = $suma;
 
-    header('Location: http://localhost/zuikis/calc2.php');
+    header('Location : http://localhost/zuikis/calc2.php');
     die;
 }
 

@@ -5,6 +5,10 @@ _d($_GET);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $b = '#fee227';
+    header('Location: http://localhost/zuikis/u6.php');
+    die;
+
+
 }
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $b = '#d28e9c';
