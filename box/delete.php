@@ -5,7 +5,7 @@ require __DIR__.'/bootstrap.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_GET['id'] ?? 0;
     $id = (int) $id;
-    deleteBox($id, $bannanas); // trina
+    deleteBox($id); // trina
     header('Location: '.URL);
     die;
 }

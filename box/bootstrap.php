@@ -7,5 +7,7 @@ require DIR. 'app/functions.php';
 
 _d($_SESSION, 'SESIJA--->');
 
+// http://localhost/zuikis/box/
+
 
 
