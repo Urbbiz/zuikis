@@ -6,7 +6,9 @@ include __DIR__ .'/Udra.php';
 
 
 
-$obj1 = new Bebras;
+$obj1 = new Bebras('red');
+
+// $obj1->init(77);
 
 $obj2 = $obj1;
 
@@ -22,10 +24,20 @@ echo '<pre>';
 
 // echo $obj1->age;
 
+$obj1->setAge(88);
+
 $obj1->getAge();
 
 
 $obj1->tail = 'SMALL';
+
+
+echo '<br>';
+
+$obj1->age = 1000;
+
+echo $obj1->children1;
+echo $obj1->age;
 
 
 
