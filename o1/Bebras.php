@@ -5,14 +5,35 @@ class Bebras {
     public $tail = 'BIG';
     private $age = 15;
 
+    private static $legs = 2;
+
     public $prop = 'BLABLA';
 
     private $wife = 'blod', $children1 = 'beaver1', $children2 = 'beaver3', $dog = 'bobik';
 
-    public function __construct($age)
+    private static $BebroObjektas;
+    
+    static public function createBebras($age)
+    {
+        echo 'Lets create';
+
+        return self::$BebroObjektas ?? self::$BebroObjektas = new self($age);
+
+    }
+    
+    
+    
+    private function __construct($age)
     {
         echo '<br>';
         echo 'Konstruojam';
+
+        
+
+        self::$legs = 85;
+
+        echo self::$legs;
+
         echo '<br>';
         if (is_integer($age)) {
             $this->init1($age);
