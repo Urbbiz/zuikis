@@ -9,6 +9,8 @@ class Bebras {
 
     public $prop = 'BLABLA';
 
+    private $udra;
+
     private $wife = 'blod', $children1 = 'beaver1', $children2 = 'beaver3', $dog = 'bobik';
 
     private static $BebroObjektas;
@@ -16,6 +18,8 @@ class Bebras {
     static public function createBebras($age)
     {
         echo 'Lets create';
+
+        
 
         return self::$BebroObjektas ?? self::$BebroObjektas = new self($age);
 
@@ -28,7 +32,7 @@ class Bebras {
         echo '<br>';
         echo 'Konstruojam';
 
-        
+        $this->udra = new Udra; //<--- dinamiskai sukurta savybe
 
         self::$legs = 85;
 
