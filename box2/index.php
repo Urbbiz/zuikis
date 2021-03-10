@@ -17,7 +17,21 @@ _d($uri);
 if ('' == $uri[0]) {
     (new BananaConstructor)->index();
 }
-
+elseif ('create' == $uri[0]) {
+    (new BananaConstructor)->create();
+}
+elseif ('store' == $uri[0]) {
+    (new BananaConstructor)->store();
+}
+elseif ('edit' == $uri[0]) {
+    (new BananaConstructor)->edit((int)$uri[1]);
+}
+elseif ('update' == $uri[0]) {
+    (new BananaConstructor)->update((int)$uri[1]);
+}
+elseif ('delete' == $uri[0]) {
+    (new BananaConstructor)->delete((int)$uri[1]);
+}
 
 
 echo 'DURYS';

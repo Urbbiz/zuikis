@@ -7,6 +7,8 @@ define('INSTALL_DIR', '/zuikis/box2/');
 
 
 require DIR. 'app/BananaConstructor.php';
+require DIR. 'app/Json.php';
+require DIR. 'app/Box.php';
 
 
 // _d($_SESSION, 'SESIJA--->');
