@@ -1,7 +1,7 @@
 <?php
 
 
-class BananaConstructor {
+class BananaController {
 
 
 
@@ -39,13 +39,8 @@ class BananaConstructor {
 
     public function update(int $id)
     {
-        
         $box = Json::getDB()->getBox($id);
-        //
-
-
         $box->bannana = (int) ($_POST['count'] ?? 0);
-
         Json::getDB()->update($box); // updeitina
         header('Location: '.URL);
         die;
