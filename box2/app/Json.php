@@ -55,11 +55,21 @@ class Json {
         $this->data[] = $box;
     }
 
-    public function update(object $box) : void
+    // public function update(object $box) : void
+    // {
+    //     foreach($this->data as $key => $box) {
+    //         if ($box->id== $id) {
+    //             $this->data[$key] = $box;
+    //             return;
+    //         }
+    //     }
+    // }
+
+    public function update(object $updateBox) : void
     {
         foreach($this->data as $key => $box) {
-            if ($box->id== $id) {
-                $this->data[$key] = $box;
+            if ($box->id== $updateBox->id) {
+                $this->data[$key] = $updateBox;
                 return;
             }
         }
