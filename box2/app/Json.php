@@ -80,6 +80,15 @@ class Json {
         foreach($this->data as $key => $box) {
             if ($box->id== $id) {
                 unset($this->data[$key]);
+                // normalizuojam masyva iki normalaus masyvo be "skyliu"
+                $this->data = array_values($this->data);
+                //
+                /*
+                pvz indeksai pries trynima 0 1 2 3 4
+                trinam 2 elementa
+                indeksai po trynimo 0 1 3 4
+                indeksai po normalizavimo 0 1 2 3
+                */
                 return;
             }
         }
