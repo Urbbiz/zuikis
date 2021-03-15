@@ -9,7 +9,14 @@ class BananaController {
     public function index()
     {
         $pageTitle = 'Bananna Boxes';
-        $boxes = Json::getDB()->readData();
+        $randDigit = Helper::getRandom();
+        // $boxes = Json::getDB()->readData();
+
+        $boxes = Json::getDB()->readAndSortData('bannana');
+
+        // $boxes = Box::orderByCount($boxes); // specifinis box sortas
+
+
         require DIR.'views/index.php';
     }
 
