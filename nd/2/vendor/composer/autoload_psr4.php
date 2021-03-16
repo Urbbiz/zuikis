@@ -10,6 +10,6 @@ return array(
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),
     'Miskas\\Mazas\\' => array($baseDir . '/bla'),
-    'Miskas\\Didelis\\' => array($baseDir . '/bla'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
+    '' => array($baseDir . '/'),
 );
