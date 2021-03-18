@@ -20,7 +20,7 @@ class Json {
         }
         $data = file_get_contents(DIR.'data/boxes.json');
         $this->data = json_decode($data);
-    }
+    };
 
     public function __destruct()
     {
@@ -42,7 +42,7 @@ class Json {
         return $this->data;
     }
 
-    public function writeData(array $data) : void
+    public function writeData(array $data, $fileName = null) : void
     {
         $this->data = json_encode($data);
     }

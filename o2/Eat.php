@@ -9,4 +9,6 @@ class Eat {
         echo '<br>Niam Niam</br>';
     }
 
+    // abstract protected function saySomething222(string $words) : void;
+
 }
