@@ -1,7 +1,8 @@
 <?php
 
 
-
+include __DIR__ .'/Miskas.php';
+include __DIR__ .'/Giria.php';
 
 include __DIR__ .'/Eat.php';
 include __DIR__ .'/River.php';
@@ -13,6 +14,8 @@ include __DIR__ .'/Udra.php';
 $obj1 = new Bebras;
 $obj2 = new Bebras;
 $obj3 = new Udra;
+
+$eat = new Eat;
 
 $obj1->setRiver('Amazon');
 
