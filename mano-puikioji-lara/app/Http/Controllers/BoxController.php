@@ -5,6 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Box;
 use Illuminate\Http\Request;
 
+
+/*
+$box Modelio objektas. vienas daiktas sukurtas is modelio klases/ eilute DB
+$boxes Objektas-kolekcija. Visu box rinkinys. /visa lentele boxes
+'box' stringas naudojamas vardams arba urlams sudaryti
+Boxes tokio daikto nera
+Box modelio klases vardas, tas kuris yra sukuriamas komanda make:model Box
+
+*/
+
 class BoxController extends Controller
 {
     /**
@@ -14,7 +24,11 @@ class BoxController extends Controller
      */
     public function index()
     {
-        $boxes = Box::all();
+        $boxes = Box::all(); // visos dezes
+
+        $boxes = $boxes->sortByDesc('id'); // https://laravel.com/docs/8.x/collections
+
+        //objektas-kolekcija
         
         return view('box.index', ['boxes' => $boxes]);
     }
@@ -37,9 +51,10 @@ class BoxController extends Controller
      */
     public function store(Request $request)
     {
-        $box = new Box;
+        $box = new Box; //<--- MOdelis abstraktus kodas/objektas
         $box->bananas = $request->bananas_in_box;
-        $box->save();
+        // DB bananas             formos name
+        $box->save(); // <---- MOdelis irasomas i DB
         return redirect()->route('box.index');
     }
 
@@ -62,7 +77,7 @@ class BoxController extends Controller
      */
     public function edit(Box $box)
     {
-        //
+        return view('box.edit', ['box' => $box]);
     }
 
     /**
@@ -74,7 +89,24 @@ class BoxController extends Controller
      */
     public function update(Request $request, Box $box)
     {
-        //
+        $box->bananas = $request->bananas_in_box;
+        // DB bananas             formos name
+        $box->save(); // <---- MOdelis irasomas i DB
+        return redirect()->route('box.index');
+    }
+
+
+    public function add(Box $box)
+    {
+        return view('box.add', ['box' => $box]);
+    }
+
+    public function addToBox(Request $request, Box $box)
+    {
+        $box->bananas = $box->bananas + $request->add;
+        // DB bananas             formos name
+        $box->save(); // <---- MOdelis irasomas i DB
+        return redirect()->route('box.index');
     }
 
     /**
