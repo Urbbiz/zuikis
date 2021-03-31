@@ -20,7 +20,7 @@ class Json {
         }
         $data = file_get_contents(DIR.'data/boxes.json');
         $this->data = json_decode($data);
-    };
+    }
 
     public function __destruct()
     {
@@ -86,6 +86,9 @@ class Json {
 
     public function delete(int $id) : void
     {
+        
+        $sql = "DELETE FROM boxes WHERE id=$id";
+        
         foreach($this->data as $key => $box) {
             if ($box->id== $id) {
                 unset($this->data[$key]);
