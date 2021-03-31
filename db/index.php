@@ -76,11 +76,22 @@ while ($row = $stmt->fetch())
 }
 
 
+////////TRYNIMAS
+$sql = "DELETE FROM trees WHERE name='Kaštonas'"; // <--- sql formavimas
+
+$pdo->query($sql);// <--- perdavimas i DB.
+
 
 /////////// ĮRAŠYMAS
-
 $sql = "INSERT INTO trees (name, height, type)
 VALUES ('Kaštonas', 7.99, 2)";// <--- sql formavimas
+
+$pdo->query($sql);// <--- perdavimas i DB.
+
+
+
+//////////REDAGAVIMAS
+$sql = "UPDATE trees SET height=88.88 WHERE name='Kaštonas'";
 
 $pdo->query($sql);// <--- perdavimas i DB.
 
