@@ -41,6 +41,19 @@ class Author extends Model
 
     public function refreshAndSave(Request $request)
     {
+        
+        $file = $request->file('author_portret');   // is siuntimo pasiima failo aprasa
+
+        $name = $file->getClientOriginalName(); // originalus vardas
+
+        $name = rand(1000000000, 9999999999). '.'. $file->getClientOriginalExtension(); //random vardas
+
+        $file->move(public_path('img'), $name); // perkeliam is tmp i ten kur reikia
+
+        $this->portret = 'http://bi.com/img/'.$name; // i db + url kelias iki paveiksliuko
+
+       
+        
         $this->name = $request->author_name;
         $this->surname = $request->author_surname;
         $this->save();
