@@ -156,6 +156,7 @@ class AuthorController extends Controller
         return redirect()->route('author.index')->with('success_message', 'The Author was renamed. Nice job!');
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -166,6 +167,14 @@ class AuthorController extends Controller
     {
         if ($author->authorBooksList->count() !== 0) {
             return redirect()->back()->with('info_message', 'The Author is immortal. You cant kill him. Nice try!');
+        }
+
+        $addedLink = 'http://bi.com/img/'; // pridetas linkas
+
+        $imgName = str_replace($addedLink, '', $author->portret); // prideta linka istrinam 
+
+        if (file_exists(public_path('img').'/'.$imgName) && is_file(public_path('img').'/'.$imgName)) {
+            unlink(public_path('img').'/'.$imgName); // istrinam
         }
         
         $author->delete();
